@@ -15,7 +15,7 @@ module.exports = {
       filename: "[name].css",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
       filename: "index.html",
       chunks: ["index"],
     }),

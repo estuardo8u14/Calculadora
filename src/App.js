@@ -5,7 +5,7 @@ import BotonBox from "./componentes/BotonBox/BotonBox";
 import Boton from "./componentes/Boton/Boton";
 import { useState } from "react";
 
-const btnValues = [
+const Valoresbtns = [
   ["C", "+-", "X", "-", "+"],
   [1, 2, 3],
   [4, 5, 6],
@@ -20,7 +20,7 @@ const removeSpaces = (num) => num.toString().replace(/\s/g, "");
 
 const App = () => {
   let [calc, setCalc] = useState({
-    sign: "",
+    signo: "",
     num: 0,
     res: 0,
   });
@@ -38,7 +38,7 @@ const App = () => {
             : removeSpaces(calc.num) % 1 === 0
             ? toLocaleString(Number(removeSpaces(calc.num + value)))
             : toLocaleString(calc.num + value),
-        res: !calc.sign ? 0 : calc.res,
+        res: !calc.signo ? 0 : calc.res,
       });
     }
   };
@@ -53,19 +53,19 @@ const App = () => {
     });
   };
 
-  const signClickHandler = (e) => {
+  const signoClickHandler = (e) => {
     setCalc({
       ...calc,
-      sign: e.target.innerHTML,
+      signo: e.target.innerHTML,
       res: !calc.res && calc.num ? calc.num : calc.res,
       num: 0,
     });
   };
 
   const equalsClickHandler = () => {
-    if (calc.sign && calc.num) {
-      const math = (a, b, sign) =>
-        sign === "+" ? a + b : sign === "-" ? a - b : a * b;
+    if (calc.signo && calc.num) {
+      const math = (a, b, signo) =>
+        signo === "+" ? a + b : signo === "-" ? a - b : a * b;
 
       setCalc({
         ...calc,
@@ -73,10 +73,10 @@ const App = () => {
           math(
             Number(removeSpaces(calc.res)),
             Number(removeSpaces(calc.num)),
-            calc.sign
+            calc.signo
           )
         ),
-        sign: "",
+        signo: "",
         num: 0,
       });
     }
@@ -87,14 +87,14 @@ const App = () => {
       ...calc,
       num: calc.num ? toLocaleString(removeSpaces(calc.num) * -1) : 0,
       res: calc.res ? toLocaleString(removeSpaces(calc.res) * -1) : 0,
-      sign: "",
+      signo: "",
     });
   };
 
   const resetClickHandler = () => {
     setCalc({
       ...calc,
-      sign: "",
+      signo: "",
       num: 0,
       res: 0,
     });
@@ -104,7 +104,7 @@ const App = () => {
     <Contenedor>
       <Pantalla value={calc.num ? calc.num : calc.res} />
       <BotonBox>
-        {btnValues.flat().map((btn, i) => {
+        {Valoresbtns.flat().map((btn, i) => {
           return (
             <Boton
               key={i}
@@ -118,7 +118,7 @@ const App = () => {
                   : btn === "="
                   ? equalsClickHandler
                   : btn === "X" || btn === "-" || btn === "+"
-                  ? signClickHandler
+                  ? signoClickHandler
                   : btn === "."
                   ? comaClickHandler
                   : numClickHandler

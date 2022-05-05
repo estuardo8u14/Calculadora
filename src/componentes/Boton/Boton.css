@@ -1,23 +1,42 @@
+.botones {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 button {
   border: none;
-  background-color: rgb(59, 39, 194);
+  background-color: rgb(0, 0, 0);
   font-size: 24px;
   color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
   border-radius: 30px;
   outline: none;
+  box-shadow: inset 0px 3px 5px rgb(0, 0, 0), 0px 0px 10px rgba(255, 2, 2, 0.15);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    45deg,
+    rgb(61, 50, 255) 5%,
+    rgba(0, 255, 13, 0.705) 19%,
+    rgba(0, 0, 0, 0) 21%
+  );
+  background-size: 150%;
+  background-position: right;
+  transition: 1s;
 }
 
 button:hover {
-  background-color: rgb(0, 255, 136);
+  background-position: left;
+  color: white;
+  box-shadow: inset 0px 3px 5px rgb(36, 124, 10),
+    0px 0px 10px rgba(255, 1, 1, 0.25);
 }
 
-.equals {
-  grid-column: 2 / 6;
-  background-color: rgb(253, 90, 61);
-}
-
-.equals:hover {
-  background-color: rgb(255, 30, 0);
+button:focus {
+  outline: none;
 }

@@ -16,7 +16,7 @@ const Valoresbtns = [
 const toLocaleString = (num) =>
   String(num).replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, "$1 ");
 
-const removeSpaces = (num) => num.toString().replace(/\s/g, "");
+const removerEspacios = (num) => num.toString().replace(/\s/g, "");
 
 const App = () => {
   let [calc, setCalc] = useState({
@@ -25,25 +25,25 @@ const App = () => {
     res: 0,
   });
 
-  const numClickHandler = (e) => {
+  const numeroHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
 
-    if (removeSpaces(calc.num).length < 16) {
+    if (removerEspacios(calc.num).length < 16) {
       setCalc({
         ...calc,
         num:
           calc.num === 0 && value === "0"
             ? "0"
-            : removeSpaces(calc.num) % 1 === 0
-            ? toLocaleString(Number(removeSpaces(calc.num + value)))
+            : removerEspacios(calc.num) % 1 === 0
+            ? toLocaleString(Number(removerEspacios(calc.num + value)))
             : toLocaleString(calc.num + value),
         res: !calc.signo ? 0 : calc.res,
       });
     }
   };
 
-  const comaClickHandler = (e) => {
+  const decimalHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
 
@@ -62,7 +62,7 @@ const App = () => {
     });
   };
 
-  const equalsClickHandler = () => {
+  const igualHandler = () => {
     if (calc.signo && calc.num) {
       const math = (a, b, signo) =>
         signo === "+" ? a + b : signo === "-" ? a - b : a * b;
@@ -71,8 +71,8 @@ const App = () => {
         ...calc,
         res: toLocaleString(
           math(
-            Number(removeSpaces(calc.res)),
-            Number(removeSpaces(calc.num)),
+            Number(removerEspacios(calc.res)),
+            Number(removerEspacios(calc.num)),
             calc.signo
           )
         ),
@@ -82,16 +82,16 @@ const App = () => {
     }
   };
 
-  const invertClickHandler = () => {
+  const invertirNumHandler = () => {
     setCalc({
       ...calc,
-      num: calc.num ? toLocaleString(removeSpaces(calc.num) * -1) : 0,
-      res: calc.res ? toLocaleString(removeSpaces(calc.res) * -1) : 0,
+      num: calc.num ? toLocaleString(removerEspacios(calc.num) * -1) : 0,
+      res: calc.res ? toLocaleString(removerEspacios(calc.res) * -1) : 0,
       signo: "",
     });
   };
 
-  const resetClickHandler = () => {
+  const cHandler = () => {
     setCalc({
       ...calc,
       signo: "",
@@ -112,16 +112,16 @@ const App = () => {
               value={btn}
               onClick={
                 btn === "C"
-                  ? resetClickHandler
+                  ? cHandler
                   : btn === "+-"
-                  ? invertClickHandler
+                  ? invertirNumHandler
                   : btn === "="
-                  ? equalsClickHandler
+                  ? igualHandler
                   : btn === "X" || btn === "-" || btn === "+"
                   ? signoClickHandler
                   : btn === "."
-                  ? comaClickHandler
-                  : numClickHandler
+                  ? decimalHandler
+                  : numeroHandler
               }
             />
           );

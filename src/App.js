@@ -10,7 +10,7 @@ const Valoresbtns = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
-  [0, ".", "="],
+  [0, ".", "/", "="],
 ];
 
 const toLocaleString = (num) =>
@@ -65,17 +65,26 @@ const App = () => {
   const igualHandler = () => {
     if (calc.signo && calc.num) {
       const math = (a, b, signo) =>
-        signo === "+" ? a + b : signo === "-" ? a - b : a * b;
+        signo === "+"
+          ? a + b
+          : signo === "-"
+          ? a - b
+          : signo === "X"
+          ? a * b
+          : a / b;
 
       setCalc({
         ...calc,
-        res: toLocaleString(
-          math(
-            Number(removerEspacios(calc.res)),
-            Number(removerEspacios(calc.num)),
-            calc.signo
-          )
-        ),
+        res:
+          calc.num === "0" && calc.signo === "/"
+            ? "EROR EN DIVISION"
+            : toLocaleString(
+                math(
+                  Number(removerEspacios(calc.res)),
+                  Number(removerEspacios(calc.num)),
+                  calc.signo
+                )
+              ),
         signo: "",
         num: 0,
       });
@@ -117,7 +126,7 @@ const App = () => {
                   ? invertirNumHandler
                   : btn === "="
                   ? igualHandler
-                  : btn === "X" || btn === "-" || btn === "+"
+                  : btn === "X" || btn === "-" || btn === "+" || btn === "/"
                   ? signoClickHandler
                   : btn === "."
                   ? decimalHandler

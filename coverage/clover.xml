@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1653024985263" clover="3.2.0">
+  <project timestamp="1653024985263" name="All files">
+    <metrics statements="39" coveredstatements="24" conditionals="52" coveredconditionals="17" methods="16" coveredmethods="7" elements="107" coveredelements="48" complexity="0" loc="39" ncloc="39" packages="2" files="2" classes="2"/>
+    <package name="src">
+      <metrics statements="37" coveredstatements="22" conditionals="52" coveredconditionals="17" methods="15" coveredmethods="6"/>
+      <file name="App.js" path="C:\Users\estua\OneDrive\Escritorio\UVG\Web\Calculadora\src\App.js">
+        <metrics statements="37" coveredstatements="22" conditionals="52" coveredconditionals="17" methods="15" coveredmethods="6"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+        <line num="117" count="18" type="stmt"/>
+        <line num="143" count="2" type="stmt"/>
+        <line num="144" count="2" type="stmt"/>
+        <line num="147" count="2" type="stmt"/>
+        <line num="148" count="2" type="stmt"/>
+        <line num="151" count="2" type="stmt"/>
+        <line num="152" count="2" type="stmt"/>
+        <line num="155" count="2" type="stmt"/>
+        <line num="156" count="2" type="stmt"/>
+        <line num="159" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.componentes.Boton">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Boton.js" path="C:\Users\estua\OneDrive\Escritorio\UVG\Web\Calculadora\src\componentes\Boton\Boton.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="19" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

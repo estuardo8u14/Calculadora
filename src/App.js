@@ -18,7 +18,7 @@ const toLocaleString = (num) =>
 
 const removerEspacios = (num) => num.toString().replace(/\s/g, "");
 
-const App = () => {
+export const App = () => {
   let [calc, setCalc] = useState({
     signo: "",
     num: 0,
@@ -140,4 +140,26 @@ const App = () => {
   );
 };
 
-export default App;
+const suma = (x, y) => {
+  return x + y;
+};
+
+const resta = (x, y) => {
+  return x - y;
+};
+
+const multi = (x, y) => {
+  return x * y;
+};
+
+const dividir = (x, y) => {
+  return x / y;
+};
+
+module.exports = {
+  suma,
+  resta,
+  multi,
+  dividir,
+  App,
+};

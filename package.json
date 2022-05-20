@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "react-scripts test --env=jsdom --coverage "
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,12 @@
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
+    "@testing-library/react": "^13.2.0",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-15": "^1.4.3",
+    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
@@ -25,7 +29,10 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest-dom": "^4.0.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^18.1.0",
     "react-textfit": "^1.1.1",
     "sass-loader": "^12.6.0",
     "webpack": "^5.72.0",
@@ -33,7 +40,13 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "babel-jest": "^28.0.3",
+    "jest": "^28.0.3",
+    "jest-environment-jsdom": "^28.0.2",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-scripts": "^5.0.1",
+    "react-test-render": "^1.1.2"
   }
 }

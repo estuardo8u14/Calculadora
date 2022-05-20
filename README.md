@@ -4,5 +4,7 @@
 3.  o visitar  http://3.130.75.56/
 ## Testing
 1. npm i
-1. npm test o npm run test
+2. npm test o npm run test
+Imagen
+
 ![alt text](https://github.com/estuardo8u14/Calculadora/blob/master/public/Capture.PNG?raw=true)

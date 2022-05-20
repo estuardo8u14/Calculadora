@@ -5,5 +5,5 @@
 ## Testing
 1. npm i
 1. npm test o npm run test
-![alt text](https://github.com/estuardo8u14/Calculadora/?raw=true)
+![alt text](https://github.com/estuardo8u14/Calculadora/blob/master/public/Capture.PNG?raw=true)
 [[https://github.com/estuardo8u14/Calculadora/blob/master/public/Capture.PNG|alt=Capture]]

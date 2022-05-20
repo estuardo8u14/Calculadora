@@ -5,6 +5,6 @@
 ## Testing
 1. npm i
 2. npm test o npm run test
-Imagen
+
 
 ![alt text](https://github.com/estuardo8u14/Calculadora/blob/master/public/Capture.PNG?raw=true)
